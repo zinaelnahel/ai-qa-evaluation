@@ -1,0 +1,142 @@
+[
+  {
+    "id": "leave-days",
+    "question": "How many paid vacation days do employees get each year?",
+    "expected_source": "leave",
+    "expected_quote": "Employees receive 24 paid vacation days per calendar year.",
+    "audience": "employee"
+  },
+  {
+    "id": "leave-paraphrase",
+    "question": "How many paid days of holiday are available?",
+    "expected_source": "leave",
+    "expected_quote": "Employees receive 24 paid vacation days per calendar year.",
+    "audience": "employee"
+  },
+  {
+    "id": "leave-archived-conflict",
+    "question": "annual holiday vacation policy",
+    "expected_source": "leave",
+    "expected_quote": "Employees receive 24 paid vacation days per calendar year.",
+    "audience": "employee"
+  },
+  {
+    "id": "expense-deadline",
+    "question": "What is the deadline to submit an expense claim?",
+    "expected_source": "expenses",
+    "expected_quote": "Submit expense claims within 30 calendar days of purchase.",
+    "audience": "employee"
+  },
+  {
+    "id": "expense-paraphrase",
+    "question": "How soon do I need to submit a receipt for reimbursement?",
+    "expected_source": "expenses",
+    "expected_quote": "Submit expense claims within 30 calendar days of purchase.",
+    "audience": "employee"
+  },
+  {
+    "id": "laptop-replacement",
+    "question": "laptop replacement equipment",
+    "expected_source": "equipment",
+    "expected_quote": "Standard laptops are eligible for replacement after four years.",
+    "audience": "employee"
+  },
+  {
+    "id": "laptop-paraphrase",
+    "question": "When is my computer due for equipment renewal?",
+    "expected_source": "equipment",
+    "expected_quote": "Standard laptops are eligible for replacement after four years.",
+    "audience": "employee"
+  },
+  {
+    "id": "remote-work",
+    "question": "remote work hybrid",
+    "expected_source": "remote",
+    "expected_quote": "Employees may work remotely up to two days per week.",
+    "audience": "employee"
+  },
+  {
+    "id": "remote-paraphrase",
+    "question": "How often can I telecommute and work from home?",
+    "expected_source": "remote",
+    "expected_quote": "Employees may work remotely up to two days per week.",
+    "audience": "employee"
+  },
+  {
+    "id": "training-allowance",
+    "question": "training budget allowance",
+    "expected_source": "training",
+    "expected_quote": "The annual training allowance is EUR 600 per employee.",
+    "audience": "employee"
+  },
+  {
+    "id": "training-paraphrase",
+    "question": "learning course budget",
+    "expected_source": "training",
+    "expected_quote": "The annual training allowance is EUR 600 per employee.",
+    "audience": "employee"
+  },
+  {
+    "id": "it-contact",
+    "question": "IT support ticket contact",
+    "expected_source": "support",
+    "expected_quote": "Send IT support requests to helpdesk@example.invalid.",
+    "audience": "employee"
+  },
+  {
+    "id": "it-paraphrase",
+    "question": "helpdesk support",
+    "expected_source": "support",
+    "expected_quote": "Send IT support requests to helpdesk@example.invalid.",
+    "audience": "employee"
+  },
+  {
+    "id": "unknown-parking",
+    "question": "Is parking subsidized?",
+    "expected_source": null,
+    "expected_quote": null,
+    "audience": "employee"
+  },
+  {
+    "id": "unknown-relocation",
+    "question": "Is relocation covered?",
+    "expected_source": null,
+    "expected_quote": null,
+    "audience": "employee"
+  },
+  {
+    "id": "ambiguous-topic",
+    "question": "Is this the remote work policy or the laptop replacement policy?",
+    "expected_source": null,
+    "expected_quote": null,
+    "audience": "employee"
+  },
+  {
+    "id": "restricted-record",
+    "question": "finance reconciliation reference",
+    "expected_source": null,
+    "expected_quote": null,
+    "audience": "employee"
+  },
+  {
+    "id": "authorized-record",
+    "question": "finance reconciliation reference",
+    "expected_source": "finance",
+    "expected_quote": "The reconciliation reference is QA-FINANCE-4829.",
+    "audience": "finance"
+  },
+  {
+    "id": "unapproved-record",
+    "question": "vacation paid days annual",
+    "expected_source": "leave",
+    "expected_quote": "Employees receive 24 paid vacation days per calendar year.",
+    "audience": "employee"
+  },
+  {
+    "id": "cross-session",
+    "question": "finance reconciliation reference",
+    "expected_source": null,
+    "expected_quote": null,
+    "audience": "employee"
+  }
+]

@@ -1,0 +1,36 @@
+name: AI QA evaluation
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  offline-evaluation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Locate evaluation project
+        run: |
+          if [[ -f ai-qa-evaluation/pytest.ini ]]; then
+            echo "EVAL_DIR=ai-qa-evaluation" >> "$GITHUB_ENV"
+          else
+            echo "EVAL_DIR=." >> "$GITHUB_ENV"
+          fi
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r "$EVAL_DIR/requirements-dev.txt"
+      - name: Run offline evaluation
+        run: python -m pytest "$EVAL_DIR" -m "not live" --junitxml="$EVAL_DIR/results/offline.xml"
+      - name: Write summary
+        if: ${{ !cancelled() }}
+        run: |
+          python "$EVAL_DIR/report.py" "$EVAL_DIR/results/offline.xml" "$EVAL_DIR/results/offline.md" --label "Offline GitHub Actions run"
+          cat "$EVAL_DIR/results/offline.md" >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload evaluation evidence
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-qa-evaluation
+          path: ${{ env.EVAL_DIR }}/results/
